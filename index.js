@@ -110,7 +110,7 @@ module.exports = function (glob, options, callback) {
 		// and not when our own internal changeEvent triggers it
 		if(file.event !== changeEvent) {
 			watchLessImports(file, options, function(importFile) {
-				watchStream._gaze.emit('all', changeEvent, filePath);
+				watchStream.emit('all', changeEvent, filePath);
 			},
 			cb);
 		}
